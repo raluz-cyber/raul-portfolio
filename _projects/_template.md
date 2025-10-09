@@ -17,4 +17,3 @@ featured: false
 Short Markdown body describing the project. Replace this when you add real ones.
 
 
-add project collection template
