@@ -1,0 +1,49 @@
+# _config.yml
+title: "Raul Luzardo"
+description: "Multi-page portfolio built with Jekyll and pure HTML/CSS."
+url: "https://your-username.github.io"   # update after you publish
+baseurl: ""                               # if this is a user/organization site; for project site use "/repo-name"
+
+# Build
+markdown: kramdown
+highlighter: none
+theme: null
+permalink: pretty
+timezone: America/Chicago
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Plugins supported by GitHub Pages
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Defaults (layouts will come next step)
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: project
+  - scope:
+      path: ""
+    values:
+      layout: page
+
+# Exclude junk from the build
+exclude:
+  - README.md
+  - .devcontainer/
+  - node_modules/
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+
+# Include assets
+sass:
+  style: compressed
