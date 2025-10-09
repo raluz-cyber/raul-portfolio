@@ -1,0 +1,14 @@
+<!-- _includes/header.html -->
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="{{ site.baseurl }}/" class="nav-logo">{{ site.title }}</a>
+    <ul class="nav-links">
+      <li><a href="{{ site.baseurl }}/projects.html" class="{% if page.url contains '/projects' %}active{% endif %}">Projects</a></li>
+      <li><a href="{{ site.baseurl }}/about.html" class="{% if page.url contains '/about' %}active{% endif %}">About</a></li>
+      <li><a href="{{ site.baseurl }}/gallery.html" class="{% if page.url contains '/gallery' %}active{% endif %}">Gallery</a></li>
+      <li><a href="{{ site.baseurl }}/contact.html" class="{% if page.url contains '/contact' %}active{% endif %}">Contact</a></li>
+    </ul>
+  </nav>
+</header>
