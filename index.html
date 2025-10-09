@@ -1,16 +1,41 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Raul Luzardo — Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% seo %}
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
-</head>
-<body>
-  <main>
-    <h1>Coming Soon</h1>
-    <p>The skeleton is live — next we’ll add layouts, includes, and real pages.</p>
-  </main>
-</body>
-</html>
+---
+layout: default
+title: Home
+---
+
+<section class="hero">
+  <h1 class="hero-title">{{ site.data.site.name | default: site.title }}</h1>
+  <p class="hero-tagline">{{ site.data.site.tagline | default: site.description }}</p>
+
+  <div class="hero-actions">
+    <a class="btn" href="{{ site.baseurl }}/projects.html">View Projects</a>
+    <a class="btn btn-muted" href="{{ site.baseurl }}/about.html">About</a>
+    {% if site.data.site.resume_path %}
+      <a class="btn btn-outline" href="{{ site.data.site.resume_path }}">Resume (PDF)</a>
+    {% endif %}
+  </div>
+</section>
+
+<section class="home-featured">
+  <h2>Featured Projects</h2>
+  {% assign featured = site.projects | where_exp: "p", "p.featured == true" | sort: "date" | reverse %}
+  {% if featured and featured.size > 0 %}
+    <ul class="card-grid">
+      {% for p in featured limit: 2 %}
+        <li>{% include card-project.html project=p %}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No featured projects yet. Mark a project with <code>featured: true</code> in its front matter.</p>
+  {% endif %}
+</section>
+
+<section class="home-quicklinks">
+  <h2>Quick Links</h2>
+  <ul class="quicklinks">
+    <li><a href="{{ site.baseurl }}/projects.html">All Projects</a></li>
+    <li><a href="{{ site.baseurl }}/gallery.html">Gallery</a></li>
+    <li><a href="{{ site.baseurl }}/contact.html">Contact</a></li>
+  </ul>
+</section>
+
