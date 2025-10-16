@@ -1,0 +1,31 @@
+---
+layout: page
+title: About
+permalink: /about.html
+---
+
+<p><strong>Short bio:</strong> Replace this with a tight professional blurb + a personal line.</p>
+
+<h2>Skills</h2>
+<ul>
+  <li>Mechanical: SolidWorks, GD&T, manufacturing basics</li>
+  <li>Coding: Python, MATLAB, Excel modeling</li>
+  <li>Supply Chain: SPM, network design, DC ops</li>
+</ul>
+
+<h2>Resume</h2>
+<p>
+  <a href="{{ site.data.site.resume_path }}">Inline resume link (PDF)</a>
+</p>
+<p>
+  <a class="btn" href="{{ site.data.site.resume_path }}">Download Resume</a>
+</p>
+
+<h2>Socials</h2>
+<ul>
+  {% assign s = site.data.site.socials %}
+  {% if s.linkedin %}<li><a href="{{ s.linkedin }}">LinkedIn</a></li>{% endif %}
+  {% if s.instagram %}<li><a href="{{ s.instagram }}">Instagram</a></li>{% endif %}
+  {% if s.email %}<li><a href="{{ s.email }}">Email</a></li>{% endif %}
+</ul>
+
