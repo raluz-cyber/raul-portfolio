@@ -1,0 +1,15 @@
+---
+layout: page
+title: Contact
+permalink: /contact.html
+---
+
+<p>Reach out anytime. Email is best.</p>
+
+<ul>
+  {% assign s = site.data.site.socials %}
+  {% if s.email %}<li><a href="{{ s.email }}">Email</a></li>{% endif %}
+  {% if s.linkedin %}<li><a href="{{ s.linkedin }}">LinkedIn</a></li>{% endif %}
+  {% if s.instagram %}<li><a href="{{ s.instagram }}">Instagram</a></li>{% endif %}
+</ul>
+
