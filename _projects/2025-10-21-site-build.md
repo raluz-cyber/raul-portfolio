@@ -6,9 +6,9 @@ tags: [coding]
 summary: "Data-driven portfolio with Jekyll collections, accessible HTML/CSS, and zero-JS core. Built and previewed in Codespaces, deployed on GitHub Pages."
 role: "Architecture, templates, CSS, CI/deploy"
 tech: ["Jekyll", "Liquid", "HTML", "CSS", "GitHub Pages", "Codespaces"]
-hero_image: "/assets/img/projects/site-build/hero.jpg"
+hero_image: "/assets/img/projects/site-build/hero.png"
 gallery:
-  - "/assets/img/projects/site-build/structure.jpg"
+  - "/assets/img/projects/site-build/hero.png"
   - "/assets/img/projects/site-build/layouts.jpg"
   - "/assets/img/projects/site-build/cards.jpg"
 links:
