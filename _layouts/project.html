@@ -1,49 +1,47 @@
 ---
 layout: default
 ---
-<article class="project">
-  <header class="project-hero">
-    {% if page.hero_image %}
-      <img src="{{ page.hero_image | relative_url }}" alt="{{ page.title | escape }}" loading="lazy">
-    {% endif %}
+<article class="page project">
+  <header class="project-hero container">
     <h1 class="project-title">{{ page.title }}</h1>
     {% if page.summary %}<p class="project-summary">{{ page.summary }}</p>{% endif %}
     <ul class="project-meta">
-      {% if page.date %}<li><strong>Date:</strong> {{ page.date | date: "%b %d, %Y" }}</li>{% endif %}
-      {% if page.role %}<li><strong>Role:</strong> {{ page.role }}</li>{% endif %}
-      {% if page.tech %}<li><strong>Tech:</strong> {{ page.tech | join: ", " }}</li>{% endif %}
+      <li>{{ page.date | date: "%B %-d, %Y" }}</li>
+      {% if page.role %}<li>Role: {{ page.role }}</li>{% endif %}
+      {% if page.tech %}<li>Tech: {{ page.tech | join: ", " }}</li>{% endif %}
     </ul>
-    {% if page.tags %}
-      <ul class="tag-list">
-        {% for tag in page.tags %}
-          <li class="tag">{{ tag }}</li>
-        {% endfor %}
-      </ul>
+    {% if page.hero_image %}
+      <div class="card-media">
+        <img src="{{ page.hero_image | relative_url }}" alt="{{ page.title | escape }}">
+      </div>
     {% endif %}
   </header>
 
-  <div class="project-body">
+  <main id="main" class="container page-content">
     {{ content }}
-  </div>
 
-  {% if page.gallery and page.gallery.size > 0 %}
-  <section class="project-gallery" aria-label="Project gallery">
-    <ul class="gallery-grid">
-      {% for img in page.gallery %}
-        <li><img src="{{ img | relative_url }}" alt="{{ page.title | escape }} image {{ forloop.index }}" loading="lazy"></li>
-      {% endfor %}
-    </ul>
-  </section>
-  {% endif %}
+    {% if page.gallery %}
+      <section class="project-gallery">
+        <h2>Gallery</h2>
+        <ul class="gallery-grid">
+          {% for img in page.gallery %}
+            <li><img src="{{ img | relative_url }}" alt="{{ page.title }} – image {{ forloop.index }}" loading="lazy"></li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
 
-  {% if page.links and (page.links.repo or page.links.demo or page.links.doc) %}
-  <section class="project-links">
-    <h2>Links</h2>
-    <ul>
-      {% if page.links.repo %}<li><a href="{{ page.links.repo }}">Repository</a></li>{% endif %}
-      {% if page.links.demo %}<li><a href="{{ page.links.demo }}">Live Demo</a></li>{% endif %}
-      {% if page.links.doc %}<li><a href="{{ page.links.doc }}">Documentation</a></li>{% endif %}
-    </ul>
-  </section>
-  {% endif %}
+    {% if page.links %}
+      {% if page.links.repo or page.links.demo or page.links.doc %}
+        <section class="project-links">
+          <h2>Links</h2>
+          <ul>
+            {% if page.links.repo %}<li><a href="{{ page.links.repo }}">Repository</a></li>{% endif %}
+            {% if page.links.demo %}<li><a href="{{ page.links.demo }}">Live Demo</a></li>{% endif %}
+            {% if page.links.doc %}<li><a href="{{ page.links.doc }}">Documentation</a></li>{% endif %}
+          </ul>
+        </section>
+      {% endif %}
+    {% endif %}
+  </main>
 </article>
