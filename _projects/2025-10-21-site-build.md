@@ -6,9 +6,9 @@ tags: [coding]
 summary: "Data-driven portfolio using a Jekyll collection, accessible HTML/CSS, and zero-JS core. Built in Codespaces; deploys on GitHub Pages."
 role: "Architecture, templates, CSS, CI/deploy"
 tech: ["Jekyll", "Liquid", "HTML", "CSS", "GitHub Pages", "Codespaces"]
-hero_image: "/assets/img/projects/site-build/UseOfJekyll-img.png"
+hero_image: "/assets/img/projects/site-build/MainPageCreation-img.png"
 gallery:
-  - "/assets/img/projects/site-build/UseOfJekyll-img.png"
+  - "/assets/img/projects/site-build/MainPageCreation-img.png"
 links:
   repo: "https://github.com/raluz-cyber/raul-portfolio"
   demo: "https://raluz-cyber.github.io/raul-portfolio/"
