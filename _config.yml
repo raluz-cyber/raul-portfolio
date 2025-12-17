@@ -1,8 +1,9 @@
 # _config.yml
 title: "Raul Luzardo"
 description: "Multi-page portfolio built with Jekyll and pure HTML/CSS."
-url: "https://your-username.github.io"   # update after you publish
-baseurl: ""                               # if this is a user/organization site; for project site use "/repo-name"
+url: "https://raluz-cyber.github.io"
+baseurl: "/raul-portfolio"
+
 
 # Build
 markdown: kramdown
