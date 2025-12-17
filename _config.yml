@@ -37,6 +37,8 @@ defaults:
 
 # Exclude junk from the build
 exclude:
+  - vendor/
+  - .github/
   - README.md
   - .devcontainer/
   - node_modules/
