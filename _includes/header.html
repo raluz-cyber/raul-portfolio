@@ -5,10 +5,24 @@
   <nav class="nav">
     <a href="{{ site.baseurl }}/" class="nav-logo">{{ site.title }}</a>
     <ul class="nav-links">
-      <li><a href="{{ site.baseurl }}/projects.html" class="{% if page.url contains '/projects' %}active{% endif %}">Projects</a></li>
-      <li><a href="{{ site.baseurl }}/about.html" class="{% if page.url contains '/about' %}active{% endif %}">About</a></li>
-      <li><a href="{{ site.baseurl }}/gallery.html" class="{% if page.url contains '/gallery' %}active{% endif %}">Gallery</a></li>
-      <li><a href="{{ site.baseurl }}/contact.html" class="{% if page.url contains '/contact' %}active{% endif %}">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+  <li><a href="{{ '/projects.html' | relative_url }}" class="{% if page.url contains '/projects' %}active{% endif %}">Projects</a></li>
+  <li><a href="{{ '/about.html' | relative_url }}" class="{% if page.url contains '/about' %}active{% endif %}">About</a></li>
+  <li><a href="{{ '/gallery.html' | relative_url }}" class="{% if page.url contains '/gallery' %}active{% endif %}">Gallery</a></li>
+  <li><a href="{{ '/contact.html' | relative_url }}" class="{% if page.url contains '/contact' %}active{% endif %}">Contact</a></li>
+
+  <!-- Email options -->
+  <li><span aria-hidden="true">|</span></li>
+  <li>
+    <a
+      href="mailto:{{ site.email | uri_escape }}?subject=Portfolio%20contact&body=Hi%20Raul%2C%20"
+      rel="nofollow"
+    >Email</a>
+  </li>
+  <li>
+    <a
+      href="https://mail.google.com/mail/?view=cm&to={{ site.email | uri_escape }}&su=Portfolio%20contact"
+      target="_blank" rel="noopener nofollow"
+    >Email via Gmail</a>
+  </li>
+</ul>
+
