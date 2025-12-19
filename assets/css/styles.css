@@ -201,3 +201,26 @@ main img[alt*="hero" i] { border-radius: 14px; }
   body { color: #000; }
   a { color: #000; text-decoration: underline; }
 }
+
+
+/* === Layout fixes: sticky footer + no header wrap === */
+html, body { height: 100%; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main { flex: 1 0 auto; }   /* push footer down */
+.site-footer { flex-shrink: 0; }
+
+/* Header/nav: keep on one line on desktop */
+.nav { flex-wrap: nowrap; }
+.nav-logo { white-space: nowrap; }
+
+/* Allow wrap only on small screens */
+@media (max-width: 720px) {
+  .nav { flex-wrap: wrap; }
+  .nav-links { width: 100%; flex-wrap: wrap; }
+}
