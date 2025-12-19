@@ -1,21 +1,20 @@
-<footer class="site-footer">
-  <div class="wrap">
-    <p class="footer__text">
-      © {{ site.time | date: '%Y' }} {{ site.title }}.
-      <span class="footer__sep" aria-hidden="true">•</span>
-      <a
-        href="mailto:{{ site.email | uri_escape }}?subject=Portfolio%20contact&body=Hi%20Raul%2C%20"
-        rel="nofollow"
-      >Email</a>
-      <span class="footer__sep" aria-hidden="true">•</span>
-      <a
-        href="https://mail.google.com/mail/?view=cm&to={{ site.email | uri_escape }}&su=Portfolio%20contact"
-        target="_blank" rel="noopener nofollow"
-      >Email via Gmail</a>
-      <span class="footer__sep" aria-hidden="true">•</span>
-      <a href="https://www.linkedin.com/in/raul-luzardo/" target="_blank" rel="noopener">LinkedIn</a>
-      <span class="footer__sep" aria-hidden="true">•</span>
-      <a href="https://instagram.com/your-handle" target="_blank" rel="noopener">Instagram</a>
-    </p>
+<!-- _includes/footer.html -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container footer-inner">
+    <p>© {{ site.time | date: "%Y" }} {{ site.author | default: site.title }}. All rights reserved.</p>
+    <ul class="footer-socials">
+      {% if site.email %}
+      <li><a href="mailto:{{ site.email }}">Email</a></li>
+      {% endif %}
+      {% if site.gmail_user %}
+      <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to={{ site.gmail_user | uri_escape }}" target="_blank" rel="noopener">Email via Gmail</a></li>
+      {% endif %}
+      {% if site.linkedin %}
+      <li><a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>
+      {% endif %}
+      {% if site.instagram %}
+      <li><a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a></li>
+      {% endif %}
+    </ul>
   </div>
 </footer>
