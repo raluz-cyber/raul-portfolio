@@ -1,12 +1,14 @@
-<!-- _includes/head-meta.html -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
-<meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
-
-<link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
-<link rel="icon" href="{{ site.baseurl }}/assets/img/favicon.png" type="image/png">
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
+<title>{{ page.title | default: site.title }}</title>
 
 {% seo %}
+
+<!-- Favicons -->
+<link rel="icon" href="{{ '/assets/img/favicon/favicon.ico' | relative_url }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/favicon/favicon-32.png' | relative_url }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/favicon/apple-touch-icon.png' }}">
+
+<!-- Styles -->
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
